@@ -6,3 +6,6 @@ p x
 letters=("a".."z").to_a
 p letters.shuffle
 p letters
+letters.each {|item| print item.capitalize + " "}
+print x.select {|num| num.odd?}
+print x.select {|num| num.even?}
