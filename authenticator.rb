@@ -16,7 +16,7 @@ while !isValid
     if attempts == 3
         break
     else
-        for data in users do 
+        users.each do |data|
             if data[:username] == username && data[:password] == password
                 isValid=true
                 break
