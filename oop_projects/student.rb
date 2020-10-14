@@ -1,4 +1,6 @@
+require_relative 'authenticator'
 class Student
+    include Authenticate
     attr_accessor :first_name, :last_name, :email, :username, :password
     attr_reader :username
     @first_name
@@ -22,6 +24,8 @@ class Student
 end
 
 student_obj=Student.new("Jolo", "Villanueva", "user123", "test@example.com", "password1")
+student_obj.password=student_obj.create_hash_digest(student_obj.password)
+
 puts student_obj.first_name
 puts student_obj.last_name
 puts student_obj.email
